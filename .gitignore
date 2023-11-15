@@ -1,3 +1,8 @@
 .idea
-./django_venv/
-./first_project/first_project/__pycache__/
+django_venv/
+first_projects/first_project/__pycache__/
+my_site/my_site/__pycache__/
+my_site/blog/__pycache__/
+first_projects/horoscope/__pycache__/
+my_site/geometry/__pycache__/
+first_projects/week_days/__pycache__/
