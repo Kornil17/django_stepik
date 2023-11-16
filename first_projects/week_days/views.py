@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import *
+from django.urls import reverse
 
 # Create your views here.
 
@@ -8,10 +9,13 @@ def get_days(request, day):
 
 def todo_week(request, day):
     try:
+        days = {1:'monday', 2:'tuesday'}
         if day == 1:
-            return HttpResponseRedirect('/week_days/todo_week/monday')
+            week_days = reverse('str_week', args=('monday',))
+            return HttpResponseRedirect(week_days)
         elif day == 2:
-            return redirect('/week_days/todo_week/tuesday')
+            week_days = reverse('str_week', args=('tuesday',))
+            return HttpResponseRedirect(week_days)
         else:
             return HttpResponse('Error page')
     except Exception as ex:
