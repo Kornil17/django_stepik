@@ -7,4 +7,6 @@ first_projects/horoscope/__pycache__/
 my_site/geometry/__pycache__/
 first_projects/week_days/__pycache__/
 first_projects/horoscope/migrations/
-first_projects/week_days/migrations/_
+first_projects/week_days/migrations/
+my_site/blog/migrations/
+my_site/geometry/migrations/

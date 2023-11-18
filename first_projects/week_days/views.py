@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import *
 from django.urls import reverse
+from django.template.loader import render_to_string
 
 # Create your views here.
 
@@ -20,3 +21,7 @@ def todo_week(request, day):
             return HttpResponse('Error page')
     except Exception as ex:
         return HttpResponse(ex)
+
+def plans(request):
+    response = render_to_string('week_days/greeting.html')
+    return HttpResponse(response)

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.urls import reverse
-
+from django.template.loader import render_to_string
 # Create your views here.
 
 signs = ['aquarius', 'gemini', 'libra', 'scorpio', 'capricorn', 'leo']
@@ -41,4 +41,5 @@ def sign_types(request, sign_type):
 
 
 def get_sign(request, sign_zodiak):
-    return HttpResponse(f"It's the {sign_zodiak} horoscope")
+    response = render_to_string('horoscope/signs.html')
+    return HttpResponse(response)
