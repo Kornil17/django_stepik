@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+
+
+{% block title%}
+Sign types
+{% endblock %}
+
+{% block content%}
+<ul>
+    {% if sign_type|lower == "air" %}
+        {% for value in sign_list.air %}
+            <li><a href="">{{value|title}}</a></li>
+        {% endfor %}
+    {% elif sign_type|lower == "fire" %}
+            {% for value in sign_list.fire %}
+            <li><a href="">{{value|title}}</a></li>
+            {% endfor %}
+    {% elif sign_type|lower == "water" %}
+            {% for value in sign_list.water %}
+            <li><a href="">{{value|title}}</a></li>
+            {% endfor %}
+    {% else %}
+            {% for value in sign_list.earth %}
+            <li><a href="">{{value|title}}</a></li>
+            {% endfor %}
+    {% endif %}
+</ul>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

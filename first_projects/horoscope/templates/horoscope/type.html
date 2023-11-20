@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+
+{% block title%}
+Sign types
+{% endblock %}
+
+{% block content%}
+<ul>
+    {% for type in elements %}
+            <li><a href="{% url 'type' type=type%}">{{type|title}}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+

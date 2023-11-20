@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+
+{% block title%}
+Menu
+{% endblock %}
+
+{% block content%}
+<ul>
+    {% for znak in signs %}
+        {% if forloop.first %}
+            <h1>Начало списка</h1>
+            <li><a href="{% url 'get_sign' sign_zodiak=znak %}">{{znak|title}}</a></li>
+            <h1>Середина списка</h1>
+        {% elif forloop.last %}
+            <h1>Конец списка</h1>
+            <li><a href="{% url 'get_sign' sign_zodiak=znak %}">{{znak|title}}</a></li>
+        {% else %}
+            <li><a href="{% url 'get_sign' sign_zodiak=znak %}">{{znak|title}}</a></li>
+        {% endif %}
+    {% endfor %}
+</ul>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
