@@ -1,13 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends 'base.html' %}
+
+{% block title %}
     <meta charset="UTF-8">
     <title> Post {{name|lower}} </title>
-</head>
-<body>
+{% endblock %}
+
+
+
+{% block content %}
     <h2>Статья о {{name|title}}</h2>
     <p>Здесь скоро будет информация о {{name|upper}}</p>
     <p>Длина названия статьи {{name|length}}</p>
     <p>Количество слов  названия статьи {{name|wordcount}}</p>
-</body>
-</html>
+{% endblock%}
+
+
+

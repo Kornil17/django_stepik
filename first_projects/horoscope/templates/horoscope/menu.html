@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+{% load my_filter %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'horoscope/css/menu.css' %}">
+{% endblock%}
 
 
 {% block title%}
@@ -7,6 +14,10 @@ Menu
 {% endblock %}
 
 {% block content%}
+<p>{{sign_type|split:' '}}</p>
+    {% for i in 10|circle %}
+        <p>{{i}}</p>
+    {% endfor %}
 <ul>
     {% for znak in signs %}
         {% if forloop.first %}

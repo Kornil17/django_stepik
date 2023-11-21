@@ -1,0 +1,19 @@
+html, body {
+    background-color: cyan;
+}
+
+
+
+ul {
+    background-color: white;
+    text-align: left;
+}
+
+li {
+    text-align: center;
+    width: 100%;
+    font-size: 3rem;
+    padding: 2rem 1rem;
+    list-style: none;
+
+}
