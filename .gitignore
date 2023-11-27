@@ -10,3 +10,8 @@ first_projects/horoscope/migrations/
 first_projects/week_days/migrations/
 my_site/blog/migrations/
 my_site/geometry/migrations/
+movies/__pycache__/
+films/__pycache__/
+movies/films/migrations/
+movies/films/__pycache__/
+movies/movies/__pycache__/

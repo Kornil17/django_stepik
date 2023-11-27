@@ -1,0 +1,13 @@
+{% extends 'films/base.html' %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+{% block content %}
+<h2>Название фильма - {{movie.name}}</h2>
+<p>Рейтинг фильма: {{movie.raiting}}%</p>
+<p>Популярность: {{movie.is_popular}}</p>
+<p>Автор фильма: {{movie.author|default:'Неизвестен'}}</p>
+<p>Бюджет фильма: {{movie.budjet|default:0}}</p>
+{% endblock %}

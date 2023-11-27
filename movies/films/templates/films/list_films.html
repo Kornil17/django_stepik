@@ -1,0 +1,24 @@
+{% extends 'films/base.html' %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+
+{% block content %}
+<h2>List of films</h2>
+<ul>
+    {% for f in films %}
+<!--        <li><b><a href="{% url 'movie' f.id %}">Название фильма:</a></b> {{f.name}}, <br><b>Рейтинг фильма:</b> {{f.raiting}}%, <br><b>Популярность:</b> {{f.is_popular}}, <br><b>Автор фильма:</b> {{f.author|default:'Неизвестен'}}</li>-->
+<!--    <li><b>Название фильма:</b><a href="{% url 'movie' f.id %}"> {{f.name}}</a></li>-->
+        <li><b>Название фильма:</b><a href="{{ f.get_url }}"> {{f.name}}</a></li>
+<!--        <p>{{f.procents}}</p>-->
+
+    {% endfor %}
+</ul>
+
+<h3>Общий бюджет: {{agg.budjet__max}}</h3>
+<h3>Средний рейтинг: {{agg.raiting__avg}}</h3>
+<h3>Всего фильмов: {{agg.id__count}}</h3>
+
+{% endblock %}
