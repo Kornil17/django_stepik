@@ -8,6 +8,8 @@
 <h2>Название фильма - {{movie.name}}</h2>
 <p>Рейтинг фильма: {{movie.raiting}}%</p>
 <p>Популярность: {{movie.is_popular}}</p>
-<p>Автор фильма: {{movie.author|default:'Неизвестен'}}</p>
+<p>Автор фильма: {{movie.authors|default:'Неизвестен'|title}}</p>
 <p>Бюджет фильма: {{movie.budjet|default:0}}</p>
+
+<hr>Информация о режиссере</hr>
 {% endblock %}

@@ -1,11 +1,17 @@
 from django.contrib import admin, messages
-from .models import Test, Values
+from .models import Test, Values, Author, Actors
 from django.db.models import QuerySet
 
 
-# admin.site.register(Test)
-# Register your models here.
 
+@admin.register(Actors)
+class ActorAdmin(admin.ModelAdmin):
+    list_display = ['id', 'first_name', 'last_name']
+    ordering = ['id']
+@admin.register(Author)
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = ['id', 'first_name', 'last_name', 'email']
+    ordering = ['id']
 
 class Raitingfilter(admin.SimpleListFilter):
 
@@ -31,14 +37,15 @@ class Raitingfilter(admin.SimpleListFilter):
         return queryset
 @admin.register(Test)
 class TestAdmin(admin.ModelAdmin):
-    # fields = ['name', 'author']
-    # exclude = ['author']
+    fields = ['name', 'authors']
+    exclude = ['authors']
     readonly_fields = ['is_popular', 'currency', 'budjet']
     prepopulated_fields = {'slug': ('name',)}
-    list_display = ['id', 'name', 'raiting', 'author', 'is_popular', 'slug', 'budjet', 'currency', 'raiting_status']
-    list_editable = ['name', 'raiting', 'author', 'is_popular', 'slug', 'budjet', 'currency']
+    list_display = ['id', 'name', 'raiting', 'authors',  'is_popular', 'slug', 'budjet', 'currency', 'raiting_status']
+    list_editable = ['name', 'raiting', 'authors', 'is_popular', 'slug', 'budjet', 'currency']
     ordering = ['id']
     list_per_page = 2
+    filter_horizontal = ['actors']
     actions = ['set_euro', 'set_dollar', 'set_rubles']
     search_fields = ['id', 'name__istartswith', 'currency']
     list_filter = ['id', 'name', Raitingfilter]

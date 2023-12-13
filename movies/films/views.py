@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Test
+from .models import Test, Author
 from django.db.models import F, Sum, Min, Max, Avg, Count, Value
 # Create your views here.
 
@@ -18,3 +18,10 @@ def movie(request, slug_movie):
     # movie = Test.objects.get(id=id_movie)
     movies = get_object_or_404(Test, slug=slug_movie)
     return render(request, 'films/movie.html', {'title':'Информация о фильме', 'movie':movies})
+
+def authors(request):
+    authors = Author.objects.all()
+    return render(request, 'films/authors.html', {'authors':authors})
+def author(request, name):
+    author = Author.objects.get(first_name=name)
+    return render(request, 'films/author.html', {'author':author})

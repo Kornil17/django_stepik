@@ -1,0 +1,11 @@
+{% extends 'films/base.html' %}
+
+{% block title %}{{author.first_name}}{% endblock %}
+
+
+{% block content %}
+Информация об авторе - {{author}}
+<p>{{author.first_name}}</p>
+<p>{{author.last_name}}</p>
+<p>{{author.email}}</p>
+{% endblock %}

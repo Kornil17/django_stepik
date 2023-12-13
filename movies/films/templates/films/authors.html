@@ -1,0 +1,12 @@
+{% extends 'films/base.html' %}
+
+{% block title %}Список авторов{% endblock %}
+
+
+{% block content %}
+<ul>
+  {% for a in authors%}
+  <li><a href="{% url 'author' name=a.first_name %}">{{a}}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}
