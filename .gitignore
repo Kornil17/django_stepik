@@ -15,3 +15,5 @@ films/__pycache__/
 movies/films/migrations/
 movies/films/__pycache__/
 movies/movies/__pycache__/
+feedback_page/form/__pycache__/
+feedback_page/feedback_page/__pycache__/

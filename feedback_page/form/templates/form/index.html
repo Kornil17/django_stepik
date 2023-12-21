@@ -1,0 +1,20 @@
+{% extends 'form/base.html' %}
+{% load static %}
+
+{% block head %} <link rel="stylesheet" href="{% static 'form/css/index.css' %}"> {% endblock %}
+{% block content %}
+<h2>Оставьте отзыв</h2>
+<form action="" method="post">
+        {% csrf_token %}
+    {% for field in form%}
+    <div class="form-style">
+        {{field.label_tag}}
+        {{field.errors}}
+        {{field}}
+    </div>
+    {% endfor %}
+    <br>
+    <button type="submit">Отправить</button>
+    <button type="reset">Очистить</button>
+</form>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'form/base.html' %}
+
+{% block head %} <title>Детальная информация об отзыве</title>{% endblock %}
+{% block content %}
+<h2>Отзыв номер - {{feed.id}}</h2>
+<ul>
+    <li>Имя - {{feed.name}}</li>
+    <li>Фамилия - {{feed.surname}}</li>
+    <li>Текст отзыва - {{feed.feedback}}</li>
+</ul>
+{% endblock %}
